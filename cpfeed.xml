@@ -4,26 +4,13 @@
   <channel>
     <title>CP Feed</title>
 
-    <item>
-      <title>japan</title>
-      <description>Here are the top 10 misunderstandings about the care, feeding, and breeding of these lovable striped animals.</description>
-      <pubDate>Tue, 14 Mar 2017 12:00:00 GMT</pubDate>
-      <enclosure url="http://s3contents.chinesepod.com/0179/9304de8198f799cf48b6aee425d061960014c539/mp3/chinesepod_E0179pb.mp3"
-                 type="audio/mpeg" length="34216300"/>
-      <itunes:duration>30:00</itunes:duration>
-      <guid isPermaLink="false">dzpodtop10</guid>
-    </item>
-    <item>
-      <title>Keeping those stripes neat and clean</title>
-      <description>Keeping your zebra clean is time consuming, but worth the effort.</description>
-      <pubDate>Fri, 24 Feb 2017 12:00:00 GMT</pubDate>
-      <enclosure url="https://www.example.com/podcasts/dafnas-zebras/audio/cleanstripes.mp3"
-                 type="audio/mpeg" length="26004388"/>
-      <itunes:duration>22:48</itunes:duration>
-      <guid>dzpodclean</guid>
-    </item>
+<item> <title> Good Morning! (PDF) </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/pdf/chinesepod_A0001.pdf
+" type="audio/pdf" /> </item>
 
-<item> <title> Good Morning! </title> <description> [questions, introductions, greetings] </description> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/mp3/chinesepod_A0001pb.mp3" type="audio/mpeg" /> </item>
+<item> <title> Good Morning! </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/mp3/chinesepod_A0001pb.mp3" type="audio/mpeg" /> </item>
+
+<item> <title> Good Morning! (Dialog) </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/mp3/chinesepod_A0001dg.mp3" type="audio/mpeg" /> </item>
+
 <item> <title> What's Your Name? </title> <description> [daily life, introductions] </description> <enclosure url="http://s3contents.chinesepod.com/0002/562325eabd63bca8bbd28b223a78300aecd594a0/mp3/chinesepod_A0002pb.mp3" type="audio/mpeg" /> </item>
 
 
