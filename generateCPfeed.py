@@ -25,10 +25,10 @@ def main():
     print( getPdfUrl(lessonId, levelShowCode, hashKey) )
     print( generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey)) )
 
-    # save feed
+    # create item list
     itemList = generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey))
 
-    # create boilerplate
+    # insert itemList into boilerplate
     boilerplate = """
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
