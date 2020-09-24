@@ -34,6 +34,7 @@ def main():
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
+    <title>CP Feed</title>
     %s
   </channel>
 </rss>
