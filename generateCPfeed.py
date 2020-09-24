@@ -29,7 +29,7 @@ def main():
         itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
     # save feed
-    FileUtil.saveToFile(boilerplate % (CP MP3), OUTPUT_FILE_DIR + cpmp3.xml)
+    FileUtil.saveToFile(boilerplate % ('CP MP3', itemList), OUTPUT_FILE_DIR + cpmp3.xml)
 
     # # add dialog lessons
     # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
