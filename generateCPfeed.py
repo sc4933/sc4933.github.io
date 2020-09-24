@@ -10,27 +10,24 @@ S3_URL = "http://s3contents.chinesepod.com/"
 def main():
 
     df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
-    # print(df)
-
-    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y' or dl_mp3=='y' or dl_dg=='y'")
-    print(filteredDf)
-
     itemList = ''
+
+    # add mp3 lessons
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_mp3=='y'")   
     for index, row in filteredDf.iterrows():
-        itemList += generateItem(row['title'], getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
+        itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    # lessonId = 2369.000
-    # title = 'Giving Red Envelopes'
-    # levelShowCode = 'C'
-    # hashKey = 'e2ff74e47e7d91a8701dbeae5819dd8805312af6'
 
-#     print( getMp3Url(lessonId, levelShowCode, hashKey) )
-#     print( getDialogUrl(lessonId, levelShowCode, hashKey) )
-#     print( getPdfUrl(lessonId, levelShowCode, hashKey) )
-#     print( generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey)) )
+    # add dialog lessons
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
+    for index, row in filteredDf.iterrows():
+        itemList += generateItem(row['title'] + "(dg)", getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-#     # create item list
-#     itemList = generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey))
+    # add pdf lessons
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y'")   
+    for index, row in filteredDf.iterrows():
+        itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
+
 
     # insert itemList into boilerplate
     boilerplate = """<?xml version="1.0" encoding="UTF-8"?>
@@ -49,17 +46,6 @@ def main():
     FileUtil.saveToFile(boilerplate, OUTPUT_FILE)
 
 
-
-
-
-
-'''
-    input rows of (lessonId, title, levelShowCode, hashKey)
-    output item list ready to be inserted into xml
-
-'''
-def buildItemList(masterlist, lessonId, title, levelShowCode, hashKey):
-    masterlist.append()
 
 
 def generateItem(title, url):

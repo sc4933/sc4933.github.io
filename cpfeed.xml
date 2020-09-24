@@ -3,8 +3,11 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>CP Feed</title>
-<item> <title> Giving Red Envelopes </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/pdf/chinesepod_C2369.pdf' type='application/pdf' /> </item>
-<item> <title> Chatting at a Family Gathering </title> <enclosure url='http://s3contents.chinesepod.com/2370/dd3f3f40b0923ff73594e7acbf1d4e9228a94924/pdf/chinesepod_C2370.pdf' type='application/pdf' /> </item>
+<item> <title> Giving Red Envelopes </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/mp3/chinesepod_C2369pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Giving Red Envelopes(dg) </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/mp3/chinesepod_C2369dg.mp3' type='audio/mpeg' /> </item>
+<item> <title> Chatting at a Family Gathering(dg) </title> <enclosure url='http://s3contents.chinesepod.com/2370/dd3f3f40b0923ff73594e7acbf1d4e9228a94924/mp3/chinesepod_C2370dg.mp3' type='audio/mpeg' /> </item>
+<item> <title> Giving Red Envelopes(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/pdf/chinesepod_C2369.pdf' type='application/pdf' /> </item>
+<item> <title> Chatting at a Family Gathering(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2370/dd3f3f40b0923ff73594e7acbf1d4e9228a94924/pdf/chinesepod_C2370.pdf' type='application/pdf' /> </item>
 
   </channel>
 </rss>
