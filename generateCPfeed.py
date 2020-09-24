@@ -23,13 +23,19 @@ def main():
     df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
     itemList = ''
 
-    # add mp3 lessons
+    # mp3 feed
     filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_mp3=='y'")   
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    # save feed
     FileUtil.saveToFile(BOILERPLATE % ('CP MP3', itemList), OUTPUT_FILE_DIR + 'cpmp3.xml')
+
+    # mp3 feed
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
+    for index, row in filteredDf.iterrows():
+        itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
+
+    FileUtil.saveToFile(BOILERPLATE % ('CP Dialog', itemList), OUTPUT_FILE_DIR + 'cpdg.xml')
 
     # # add dialog lessons
     # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
