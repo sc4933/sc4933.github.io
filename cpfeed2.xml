@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>CP Feed</title>
+
+
+
+<item> <title> Good Morning! </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/mp3/chinesepod_A0001pb.mp3" type="audio/mpeg" /> </item>
+<item> <title> Good Morning! (Dialog) </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/mp3/chinesepod_A0001dg.mp3" type="audio/mpeg" /> </item>
+<item> <title> Good Morning! (PDF) </title> <enclosure url="http://s3contents.chinesepod.com/0001/fe245fd3e266ff2726113b9327bd0aee7654ee67/pdf/chinesepod_A0001.pdf" type="application/pdf" /> </item>
+
+<item> <title> Giving Red Envelopes </title> <enclosure url="http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/mp3/chinesepod_C2369pb.mp3" type="audio/mpeg" /> </item>
+<item> <title> Giving Red Envelopes (Dialog) </title> <enclosure url="http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/mp3/chinesepod_C2369dg.mp3" type="audio/mpeg" /> </item>
+<item> <title> Giving Red Envelopes (PDF) </title> <enclosure url="http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/pdf/chinesepod_C2369.pdf" type="application/pdf" /> </item>
+
+
+
+
+
+  </channel>
+</rss>

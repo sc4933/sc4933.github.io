@@ -1,7 +1,9 @@
 import pandas as pd
 from pandasql import sqldf
+from fileutils import FileUtil
 
 MASTER_FILE = '/home/steve/tmp/chinesepod/chinesepodLessons.xlsx'
+OUTPUT_FILE = '/home/steve/workspace/sc4933.github.io/cpfeed.xml'
 
 S3_URL = "http://s3contents.chinesepod.com/" 
 
@@ -23,6 +25,24 @@ def main():
     print( getPdfUrl(lessonId, levelShowCode, hashKey) )
     print( generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey)) )
 
+    # save feed
+    itemList = generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey))
+
+    # create boilerplate
+    boilerplate = """
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    %s
+  </channel>
+</rss>
+
+    """ % itemList
+
+    
+    # save feed
+    FileUtil.saveToFile(boilerplate, OUTPUT_FILE)
 
 def generateItem(title, url):
     fileType = 'audio/mpeg' if url.endswith('.mp3') else 'application/pdf'
