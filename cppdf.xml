@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <title>CP Dialog</title>
+    <title>CP PDF</title>
 <item> <title> Family Life </title> <enclosure url='http://s3contents.chinesepod.com/0125/db97e406fc223494c6050ac3633d54c862a010e9/mp3/chinesepod_C0125pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Adoption </title> <enclosure url='http://s3contents.chinesepod.com/0284/ba7cad6c49a3e0ec19f66f4a1de8639bf6e521e2/mp3/chinesepod_C0284pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Child-Parent Fight </title> <enclosure url='http://s3contents.chinesepod.com/0378/f0f781ec7281b7ccc00ed28183968559b31eb811/mp3/chinesepod_C0378pb.mp3' type='audio/mpeg' /> </item>
