@@ -3,9 +3,20 @@ from pandasql import sqldf
 from fileutils import FileUtil
 
 MASTER_FILE = '/home/steve/tmp/chinesepod/chinesepodLessons.xlsx'
-OUTPUT_FILE = '/home/steve/workspace/sc4933.github.io/cpfeed.xml'
+OUTPUT_FILE_DIR = '/home/steve/workspace/sc4933.github.io/'
 
 S3_URL = "http://s3contents.chinesepod.com/" 
+
+BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>%s</title>
+%s
+  </channel>
+</rss>
+
+    """
 
 def main():
 
@@ -17,33 +28,25 @@ def main():
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
+    # save feed
+    FileUtil.saveToFile(boilerplate % (CP MP3), OUTPUT_FILE_DIR + cpmp3.xml)
 
-    # add dialog lessons
-    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
-    for index, row in filteredDf.iterrows():
-        itemList += generateItem(row['title'] + "(dg)", getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
+    # # add dialog lessons
+    # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
+    # for index, row in filteredDf.iterrows():
+    #     itemList += generateItem(row['title'] + "(dg)", getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    # add pdf lessons
-    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y'")   
-    for index, row in filteredDf.iterrows():
-        itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
+    # # add pdf lessons
+    # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y'")   
+    # for index, row in filteredDf.iterrows():
+    #     itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
 
     # insert itemList into boilerplate
-    boilerplate = """<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
-     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
-  <channel>
-    <title>CP Feed</title>
-%s
-  </channel>
-</rss>
 
-    """ % itemList
 
     
-    # save feed
-    FileUtil.saveToFile(boilerplate, OUTPUT_FILE)
+
 
 
 
