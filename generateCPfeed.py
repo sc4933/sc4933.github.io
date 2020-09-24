@@ -21,9 +21,9 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 def main():
 
     df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
-    itemList = ''
 
     # mp3 feed
+    itemList = ''
     filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_mp3=='y'")   
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
@@ -31,6 +31,7 @@ def main():
     FileUtil.saveToFile(BOILERPLATE % ('CP MP3', itemList), OUTPUT_FILE_DIR + 'cpmp3.xml')
 
     # dialog feed
+    itemList = ''
     filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(dg)", getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
@@ -38,6 +39,7 @@ def main():
     FileUtil.saveToFile(BOILERPLATE % ('CP Dialog', itemList), OUTPUT_FILE_DIR + 'cpdg.xml')
 
     # pdf feed
+    itemList = ''
     filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y'")   
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
