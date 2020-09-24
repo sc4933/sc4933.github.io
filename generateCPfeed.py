@@ -54,15 +54,15 @@ def generateItem(title, url):
 
 
 def getMp3Url(lessonId, levelShowCode, hashKey):
-    lessonId = str(int(lessonId)).zfill(3)
+    lessonId = str(int(lessonId)).zfill(4)
     return S3_URL + lessonId + "/" + hashKey + "/mp3/chinesepod_" + levelShowCode + lessonId + "pb.mp3"
 
 def getDialogUrl(lessonId, levelShowCode, hashKey):
-    lessonId = str(int(lessonId)).zfill(3)
+    lessonId = str(int(lessonId)).zfill(4)
     return S3_URL + lessonId + "/" + hashKey + "/mp3/chinesepod_" + levelShowCode + lessonId + "dg.mp3"
 
 def getPdfUrl(lessonId, levelShowCode, hashKey):
-    lessonId = str(int(lessonId)).zfill(3)
+    lessonId = str(int(lessonId)).zfill(4)
     return S3_URL + lessonId + "/" + hashKey + "/pdf/chinesepod_" + levelShowCode + lessonId + ".pdf"
 
 pd.set_option('display.expand_frame_repr', False)
