@@ -9,24 +9,28 @@ S3_URL = "http://s3contents.chinesepod.com/"
 
 def main():
 
-    # df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
-    # # print(df)
+    df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
+    # print(df)
 
-    # output = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y' or dl_mp3=='y' or dl_dg=='y'")
-    # print(output)
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y' or dl_mp3=='y' or dl_dg=='y'")
+    print(filteredDf)
 
-    lessonId = 2369.000
-    title = 'Giving Red Envelopes'
-    levelShowCode = 'C'
-    hashKey = 'e2ff74e47e7d91a8701dbeae5819dd8805312af6'
+    itemList = ''
+    for index, row in filteredDf.iterrows():
+        itemList += generateItem(row['title'], getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    print( getMp3Url(lessonId, levelShowCode, hashKey) )
-    print( getDialogUrl(lessonId, levelShowCode, hashKey) )
-    print( getPdfUrl(lessonId, levelShowCode, hashKey) )
-    print( generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey)) )
+    # lessonId = 2369.000
+    # title = 'Giving Red Envelopes'
+    # levelShowCode = 'C'
+    # hashKey = 'e2ff74e47e7d91a8701dbeae5819dd8805312af6'
 
-    # create item list
-    itemList = generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey))
+#     print( getMp3Url(lessonId, levelShowCode, hashKey) )
+#     print( getDialogUrl(lessonId, levelShowCode, hashKey) )
+#     print( getPdfUrl(lessonId, levelShowCode, hashKey) )
+#     print( generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey)) )
+
+#     # create item list
+#     itemList = generateItem(title, getPdfUrl(lessonId, levelShowCode, hashKey))
 
     # insert itemList into boilerplate
     boilerplate = """<?xml version="1.0" encoding="UTF-8"?>
@@ -34,7 +38,7 @@ def main():
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>CP Feed</title>
-    %s
+%s
   </channel>
 </rss>
 
@@ -43,6 +47,20 @@ def main():
     
     # save feed
     FileUtil.saveToFile(boilerplate, OUTPUT_FILE)
+
+
+
+
+
+
+'''
+    input rows of (lessonId, title, levelShowCode, hashKey)
+    output item list ready to be inserted into xml
+
+'''
+def buildItemList(masterlist, lessonId, title, levelShowCode, hashKey):
+    masterlist.append()
+
 
 def generateItem(title, url):
     fileType = 'audio/mpeg' if url.endswith('.mp3') else 'application/pdf'
