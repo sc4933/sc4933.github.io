@@ -42,25 +42,7 @@ def main():
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    FileUtil.saveToFile(BOILERPLATE % ('CP Dialog', itemList), OUTPUT_FILE_DIR + 'cppdf.xml')
-
-    # # add dialog lessons
-    # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_dg=='y'")   
-    # for index, row in filteredDf.iterrows():
-    #     itemList += generateItem(row['title'] + "(dg)", getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
-
-    # # add pdf lessons
-    # filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_pdf=='y'")   
-    # for index, row in filteredDf.iterrows():
-    #     itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
-
-
-    # insert itemList into boilerplate
-
-
-    
-
-
+    FileUtil.saveToFile(BOILERPLATE % ('CP Dialog', itemList), OUTPUT_FILE_DIR + 'cppdf.xml') 
 
 
 
