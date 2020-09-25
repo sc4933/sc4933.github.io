@@ -28,7 +28,7 @@ def main():
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'], getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
-    FileUtil.saveToFile(BOILERPLATE % ('CP MP3', itemList), OUTPUT_FILE_DIR + 'cpmp3.xml')
+    FileUtil.saveToFile(BOILERPLATE % ('CP MP3', itemList), OUTPUT_FILE_DIR + 'cp.xml')
 
     # dialog feed
     itemList = ''
