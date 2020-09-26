@@ -46,6 +46,8 @@ def main():
 
     FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml') 
 
+    print(filteredDf)
+    print(filteredDf.to_html())
 
 
 def generateItem(title, url):
