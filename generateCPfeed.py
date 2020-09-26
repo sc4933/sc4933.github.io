@@ -44,10 +44,24 @@ def main():
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
+    FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml')
+
+    # create html page
+    filteredDf['MP3'] = filteredDf.apply (lambda row: hyperlink(getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
+    filteredDf['Dialog'] = filteredDf.apply (lambda row: hyperlink(getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
+    filteredDf['PDF'] = filteredDf.apply (lambda row: hyperlink(getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
+    del filteredDf['lessonId']
+    del filteredDf['levelShowCode']
+    del filteredDf['hashKey']
+
     FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml') 
 
     print(filteredDf)
-    print(filteredDf.to_html())
+    FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
+
+
+def hyperlink(url):
+    return '<a href=' + url + '><div>link</div></a>'
 
 
 def generateItem(title, url):
