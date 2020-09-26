@@ -46,7 +46,7 @@ def main():
 
     FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml')
 
-    # create html page
+    # create html page (using pdf selected DF)
     filteredDf['MP3'] = filteredDf.apply (lambda row: hyperlink(getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
     filteredDf['Dialog'] = filteredDf.apply (lambda row: hyperlink(getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
     filteredDf['PDF'] = filteredDf.apply (lambda row: hyperlink(getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
@@ -56,7 +56,7 @@ def main():
 
     FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml') 
 
-    print(filteredDf)
+    # print(filteredDf)
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
 
