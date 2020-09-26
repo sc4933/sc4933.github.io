@@ -54,8 +54,6 @@ def main():
     del filteredDf['levelShowCode']
     del filteredDf['hashKey']
 
-    FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml') 
-
     # print(filteredDf)
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
