@@ -20,6 +20,8 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 
 def main():
 
+    print("> generating cp feed")
+
     df = pd.read_excel(MASTER_FILE, sheet_name='all_lessons')
 
     # mp3 feed
