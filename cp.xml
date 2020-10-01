@@ -3,33 +3,9 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>CP MP3</title>
-<item> <title> Requesting a Glass of Water </title> <enclosure url='http://s3contents.chinesepod.com/0497/73486725a5da02a3c37421487170533e706de418/mp3/chinesepod_A0497pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Ordering Xiaolongbao </title> <enclosure url='http://s3contents.chinesepod.com/0511/4811229928d47c9086bdb7331d3bd59b611878fb/mp3/chinesepod_B0511pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Paying a Bill </title> <enclosure url='http://s3contents.chinesepod.com/0519/9a8ab8df5ade297a891c6bf40a94f0b0ee4829ac/mp3/chinesepod_B0519pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Playing the Stock Market </title> <enclosure url='http://s3contents.chinesepod.com/0526/ed079492145c084eb0b5ad0252942707484abc69/mp3/chinesepod_D0526pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> I can't buy my size </title> <enclosure url='http://s3contents.chinesepod.com/0530/d8e89a38baabda62dae6c15388e3a4739e5eedd0/mp3/chinesepod_B0530pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Please Speak Chinese </title> <enclosure url='http://s3contents.chinesepod.com/0556/5df809d8e0621b60a420a69f089656a9201d3fbf/mp3/chinesepod_A0556pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Travel Itinerary </title> <enclosure url='http://s3contents.chinesepod.com/0558/6de4e397bc59e4af54d98059ba45eb648e3db4e5/mp3/chinesepod_B0558pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> How do you take your coffee? </title> <enclosure url='http://s3contents.chinesepod.com/0631/6d9505b4a7e3e6420990a7c46a42ed5badee7fee/mp3/chinesepod_A0631pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Buying a Custom-Built Computer </title> <enclosure url='http://s3contents.chinesepod.com/0682/4268038827c10ccad19cff4596a75a9a59b4b453/mp3/chinesepod_D0682pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Winter Fun </title> <enclosure url='http://s3contents.chinesepod.com/0714/a9429e225fe4a4c3a516086acb7ab59258da3587/mp3/chinesepod_C0714pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Chinese Breakfast </title> <enclosure url='http://s3contents.chinesepod.com/0717/dd5d7e255591151b7956cb7e445524c6075a65f3/mp3/chinesepod_A0717pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Using ChinesePod </title> <enclosure url='http://s3contents.chinesepod.com/0725/f835da2334378bca7ddce24b4c09fc8c402e84b1/mp3/chinesepod_C0725pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Hawaii </title> <enclosure url='http://s3contents.chinesepod.com/0745/feeca1b6414e82b4b9b6e0bbe4afd81f67d98a33/mp3/chinesepod_B0745pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Harry Potter </title> <enclosure url='http://s3contents.chinesepod.com/0919/ece80bebc4173ec71fd2e9ef0d01492e4eaacc9c/mp3/chinesepod_D0919pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Going to an International School </title> <enclosure url='http://s3contents.chinesepod.com/2276/bc72da1021fb4fa3041e086a056e67f7b2fed9cb/mp3/chinesepod_D2276pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Mooncakes for the Staff </title> <enclosure url='http://s3contents.chinesepod.com/2277/02d388f721f292dac245f1b674eb42bdb39c70f1/mp3/chinesepod_C2277pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Counter-Strike Match </title> <enclosure url='http://s3contents.chinesepod.com/2289/3636de7568195bec280efaf1dd7fe81d65033e4b/mp3/chinesepod_D2289pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Discounts on Dianping </title> <enclosure url='http://s3contents.chinesepod.com/2293/dac75d923f8a8e9ae4f9ed36f823a1dabfa00013/mp3/chinesepod_D2293pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Saved by the Gong: Physics </title> <enclosure url='http://s3contents.chinesepod.com/2299/5234ff61189e9d4af7790c7562da2ae40bd38202/mp3/chinesepod_D2299pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Chinese Food at Foreign Prices </title> <enclosure url='http://s3contents.chinesepod.com/2326/6571fcaba803250aec62424a528f98a88c6ece32/mp3/chinesepod_C2326pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> The Paper Chase </title> <enclosure url='http://s3contents.chinesepod.com/2373/914f57f03c069146a78b162cdb886f5d617cddef/mp3/chinesepod_C2373pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Time for an Update </title> <enclosure url='http://s3contents.chinesepod.com/2386/1f35e944dcef9cfdc8fbfcc907c2d62c360f6081/mp3/chinesepod_C2386pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Saving with Alipay </title> <enclosure url='http://s3contents.chinesepod.com/2389/447d6f17e6e89ad64a502055a94a4cf6344ddab0/mp3/chinesepod_C2389pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Family Ties </title> <enclosure url='http://s3contents.chinesepod.com/2394/1b6677eaac5ff75895c8da0a3b2dfce88864e65a/mp3/chinesepod_D2394pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Ordering Furniture Online </title> <enclosure url='http://s3contents.chinesepod.com/2396/9c12246cc0214d541a9a28bb0d7ad8f47361d751/mp3/chinesepod_C2396pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Cracking QR Codes </title> <enclosure url='http://s3contents.chinesepod.com/2410/93f9d1def890caca794cc50de711cf773d15b4c7/mp3/chinesepod_C2410pb.mp3' type='audio/mpeg' /> </item>
-<item> <title> Thinking Inside the Box </title> <enclosure url='http://s3contents.chinesepod.com/2429/76fa9fc3140c9476d8ab6665adb8aa05567daf34/mp3/chinesepod_C2429pb.mp3' type='audio/mpeg' /> </item>
 
   </channel>
 </rss>
