@@ -55,10 +55,18 @@ def main():
     del filteredDf['lessonId']
     del filteredDf['levelShowCode']
     del filteredDf['hashKey']
-
-    # print(filteredDf)
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
+    # send vocabs to anki
+    htmlUrl =  getHtmlUrl(lessonId, levelShowCode, hashKey)
+    df = getVocabDf( htmlUrl )
+    df = df.head(3)
+    print(df)
+
+    for index, row in df.iterrows():
+        front = row['hanzi']
+        back = row['pinyin'] + " - " + row['meaning']
+        addNotes('apitest', front, back)
 
 def hyperlink(url):
     return '<a href=' + url + '><div>link</div></a>'
@@ -80,6 +88,44 @@ def getDialogUrl(lessonId, levelShowCode, hashKey):
 def getPdfUrl(lessonId, levelShowCode, hashKey):
     lessonId = str(int(lessonId)).zfill(4)
     return S3_URL + lessonId + "/" + hashKey + "/pdf/chinesepod_" + levelShowCode + lessonId + ".pdf"
+
+def getHtmlUrl(lessonId, levelShowCode, hashKey):
+    lessonId = str(int(lessonId)).zfill(4)
+    return S3_URL + lessonId + "/" + hashKey + "/pdf/chinesepod_" + levelShowCode + lessonId + ".html"
+
+def getVocabDf(htmlUrl):
+
+    r = requests.get(url=htmlUrl)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    table = soup.find('h1', text='Key Vocabulary').find_next_sibling()
+    df = pd.read_html(str(table))[0]
+    df.columns = ['hanzi', 'pinyin', 'meaning']
+    return df
+
+def addNotes(deckName, front, back):
+
+    payload = {
+        "action": "addNote",
+        "version": 6,
+        "params": {
+            "note": {
+                "deckName": deckName,
+                "modelName": "Basic",
+                "fields": {
+                    "Front": front,
+                    "Back": back
+                },
+                "options": {
+                    "allowDuplicate": False,
+                    "duplicateScope": "deck"
+                },
+            }
+        }
+    }
+
+    r = requests.post(url=ANKI_ENDPOINT, data=json.dumps(payload))
+    res = json.loads(r.text)
+    print(res)
 
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
