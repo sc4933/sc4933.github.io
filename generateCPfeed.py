@@ -74,8 +74,6 @@ def sendVocabToAnki(row):
 
     htmlUrl =  getHtmlUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
     df = getVocabDf( htmlUrl )
-    df = df.head(3)
-    print(df)
 
     for index, row in df.iterrows():
         front = row['hanzi']
