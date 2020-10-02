@@ -1,11 +1,14 @@
 import pandas as pd
 from pandasql import sqldf
 from fileutils import FileUtil
+import requests, json
+from bs4 import BeautifulSoup
 
 MASTER_FILE = '/home/steve/tmp/chinesepod/chinesepodLessons.xlsx'
 OUTPUT_FILE_DIR = '/home/steve/workspace/sc4933.github.io/'
 
 S3_URL = "http://s3contents.chinesepod.com/" 
+ANKI_ENDPOINT = 'http://localhost:8765'
 
 BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
@@ -52,13 +55,24 @@ def main():
     filteredDf['MP3'] = filteredDf.apply (lambda row: hyperlink(getMp3Url(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
     filteredDf['Dialog'] = filteredDf.apply (lambda row: hyperlink(getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
     filteredDf['PDF'] = filteredDf.apply (lambda row: hyperlink(getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
+
+    # send vocab to anki
+    filteredDf.apply(lambda row: sendVocabToAnki(row), axis=1)
+
+    # clean up columns and create html page
     del filteredDf['lessonId']
     del filteredDf['levelShowCode']
     del filteredDf['hashKey']
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
-    # send vocabs to anki
-    htmlUrl =  getHtmlUrl(lessonId, levelShowCode, hashKey)
+
+
+
+def sendVocabToAnki(row):
+
+    # print(row)
+
+    htmlUrl =  getHtmlUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
     df = getVocabDf( htmlUrl )
     df = df.head(3)
     print(df)
