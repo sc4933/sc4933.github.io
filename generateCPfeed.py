@@ -56,19 +56,23 @@ def main():
     filteredDf['Dialog'] = filteredDf.apply (lambda row: hyperlink(getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
     filteredDf['PDF'] = filteredDf.apply (lambda row: hyperlink(getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
 
-    # send vocab to anki
-    filteredDf.apply(lambda row: sendVocabToAnki(row), axis=1)
-
     # clean up columns and create html page
     del filteredDf['lessonId']
     del filteredDf['levelShowCode']
     del filteredDf['hashKey']
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
+    # anki vocab
+    itemList = ''
+    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
+
+    # send vocab to anki
+    filteredDf.apply(lambda row: sendVocabToAnki(row, 'apitest2'), axis=1)
 
 
 
-def sendVocabToAnki(row):
+
+def sendVocabToAnki(row, deckname):
 
     # print(row)
 
@@ -78,7 +82,7 @@ def sendVocabToAnki(row):
     for index, row in df.iterrows():
         front = row['hanzi']
         back = row['pinyin'] + " - " + row['meaning']
-        addNotes('apitest', front, back)
+        addNotes(deckname, front, back)
 
 def hyperlink(url):
     return '<a href=' + url + '><div>link</div></a>'
