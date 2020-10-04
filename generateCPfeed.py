@@ -67,7 +67,7 @@ def main():
     filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
 
     # send vocab to anki
-    filteredDf.apply(lambda row: sendVocabToAnki(row, 'apitest2'), axis=1)
+    filteredDf.apply(lambda row: sendVocabToAnki(row, 'chinesepod'), axis=1)
 
 
 
