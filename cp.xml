@@ -3,7 +3,18 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>CP MP3</title>
+<item> <title> Renting an Apartment through an Agent </title> <enclosure url='http://s3contents.chinesepod.com/1454/e5e78154ba879367104bacf99bff469ae787e8af/mp3/chinesepod_C1454pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Renting an Apartment through an Agent, 2 </title> <enclosure url='http://s3contents.chinesepod.com/1477/1515ef7d681df31d5c3a855e5b7a3ee1e384fd82/mp3/chinesepod_C1477pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Renting an Apartment through an Agent 3 </title> <enclosure url='http://s3contents.chinesepod.com/1506/2c30c899179bd2bb37be30ee5076fc945c49eda3/mp3/chinesepod_C1506pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Renting an Apartment through an Agent 4 </title> <enclosure url='http://s3contents.chinesepod.com/1526/8fdf9151e18a9e5dbee02ca59e0381fcc72022af/mp3/chinesepod_C1526pb.mp3' type='audio/mpeg' /> </item>
 <item> <title> Buying a House </title> <enclosure url='http://s3contents.chinesepod.com/1171/b54abd1b9d0ca48454c5af0996bbae49d2ee4bb2/mp3/chinesepod_D1171pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Designing the New Apartment </title> <enclosure url='http://s3contents.chinesepod.com/1346/60f38f304ef18484e09373a06393399c85ea22f8/mp3/chinesepod_D1346pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Designing the New Apartment 2 </title> <enclosure url='http://s3contents.chinesepod.com/1352/3700040911864565e3558a68ed83a2d4852bb734/mp3/chinesepod_D1352pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Designing the New Apartment 3 </title> <enclosure url='http://s3contents.chinesepod.com/1375/67d89f64eba7da93874577944e057e70a1386354/mp3/chinesepod_D1375pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Designing the New Apartment 4 </title> <enclosure url='http://s3contents.chinesepod.com/1405/680b6f837a9a99c31df7d3368680a4ffe0ee2529/mp3/chinesepod_D1405pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Leeching off the Parents </title> <enclosure url='http://s3contents.chinesepod.com/1534/9cdb2890c45d9d867837ee2e47f97294405ef7d9/mp3/chinesepod_D1534pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Going to an International School </title> <enclosure url='http://s3contents.chinesepod.com/2276/bc72da1021fb4fa3041e086a056e67f7b2fed9cb/mp3/chinesepod_D2276pb.mp3' type='audio/mpeg' /> </item>
+<item> <title> Counter-Strike Match </title> <enclosure url='http://s3contents.chinesepod.com/2289/3636de7568195bec280efaf1dd7fe81d65033e4b/mp3/chinesepod_D2289pb.mp3' type='audio/mpeg' /> </item>
 
   </channel>
 </rss>
