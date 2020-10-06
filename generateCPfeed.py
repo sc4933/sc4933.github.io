@@ -49,6 +49,7 @@ def main():
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
+    filteredDf.fillna("",inplace=True)
     print(filteredDf)
 
     FileUtil.saveToFile(BOILERPLATE % ('CP PDF', itemList), OUTPUT_FILE_DIR + 'cppdf.xml')
