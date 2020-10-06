@@ -57,8 +57,6 @@ def main():
     filteredDf['PDF'] = filteredDf.apply (lambda row: hyperlink(getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])), axis=1)
 
     # clean up columns and create html page
-    del filteredDf['lessonId']
-    del filteredDf['levelShowCode']
     del filteredDf['hashKey']
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
