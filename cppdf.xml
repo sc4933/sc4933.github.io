@@ -3,6 +3,11 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>CP PDF</title>
+<item> <title> Meeting the Girlfriend's Parents(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/1382/eb2a917eb160f77ade65fb14db33435c6508efad/pdf/chinesepod_C1382.pdf' type='application/pdf' /> </item>
+<item> <title> Dinner with the Girlfriend's Parents(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/1879/4bc55af4ed81e23533eb55085ed64606c1eaedc6/pdf/chinesepod_C1879.pdf' type='application/pdf' /> </item>
+<item> <title> Giving Red Envelopes(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/pdf/chinesepod_C2369.pdf' type='application/pdf' /> </item>
+<item> <title> Cracking QR Codes(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2410/93f9d1def890caca794cc50de711cf773d15b4c7/pdf/chinesepod_C2410.pdf' type='application/pdf' /> </item>
+<item> <title> Eating Dinner with a Client(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2433/c7fd18273d051ddb2be6cd89d7d1b20d412b4481/pdf/chinesepod_C2433.pdf' type='application/pdf' /> </item>
 <item> <title> Apartment Hunting(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/0086/034fb9341b7b4cd5094111f630f9105bad8a6bbd/pdf/chinesepod_C0086.pdf' type='application/pdf' /> </item>
 <item> <title> Future Goals(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/0104/7619aeda0c47369a294c2aa4111332f60a7c4af1/pdf/chinesepod_C0104.pdf' type='application/pdf' /> </item>
 <item> <title> Family Life(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/0125/db97e406fc223494c6050ac3633d54c862a010e9/pdf/chinesepod_C0125.pdf' type='application/pdf' /> </item>
@@ -54,11 +59,6 @@
 <item> <title> Going to an International School(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2276/bc72da1021fb4fa3041e086a056e67f7b2fed9cb/pdf/chinesepod_D2276.pdf' type='application/pdf' /> </item>
 <item> <title> Counter-Strike Match(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2289/3636de7568195bec280efaf1dd7fe81d65033e4b/pdf/chinesepod_D2289.pdf' type='application/pdf' /> </item>
 <item> <title> Family Ties(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2394/1b6677eaac5ff75895c8da0a3b2dfce88864e65a/pdf/chinesepod_D2394.pdf' type='application/pdf' /> </item>
-<item> <title> Meeting the Girlfriend's Parents(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/1382/eb2a917eb160f77ade65fb14db33435c6508efad/pdf/chinesepod_C1382.pdf' type='application/pdf' /> </item>
-<item> <title> Dinner with the Girlfriend's Parents(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/1879/4bc55af4ed81e23533eb55085ed64606c1eaedc6/pdf/chinesepod_C1879.pdf' type='application/pdf' /> </item>
-<item> <title> Giving Red Envelopes(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2369/e2ff74e47e7d91a8701dbeae5819dd8805312af6/pdf/chinesepod_C2369.pdf' type='application/pdf' /> </item>
-<item> <title> Cracking QR Codes(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2410/93f9d1def890caca794cc50de711cf773d15b4c7/pdf/chinesepod_C2410.pdf' type='application/pdf' /> </item>
-<item> <title> Eating Dinner with a Client(pdf) </title> <enclosure url='http://s3contents.chinesepod.com/2433/c7fd18273d051ddb2be6cd89d7d1b20d412b4481/pdf/chinesepod_C2433.pdf' type='application/pdf' /> </item>
 
   </channel>
 </rss>
