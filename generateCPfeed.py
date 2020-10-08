@@ -21,6 +21,9 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 
     """
 
+# configs
+sendToAnki = False
+
 def main():
 
     print("> generating cp feed")
@@ -64,11 +67,12 @@ def main():
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
     # anki vocab
-    itemList = ''
-    filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
+    if sendToAnki:
+        itemList = ''
+        filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
 
-    # send vocab to anki
-    filteredDf.apply(lambda row: sendVocabToAnki(row, 'chinesepod'), axis=1)
+        # send vocab to anki
+        filteredDf.apply(lambda row: sendVocabToAnki(row, 'chinesepod'), axis=1)
 
 
 
