@@ -22,7 +22,8 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
     """
 
 # configs
-sendToAnki = False
+sendToAnki = True
+ANKI_DECK_NAME = 'chineseidentity'
 
 def main():
 
@@ -68,11 +69,15 @@ def main():
 
     # anki vocab
     if sendToAnki:
+
+        # create deck
+        addDeck(ANKI_DECK_NAME)
+
         itemList = ''
         filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
 
         # send vocab to anki
-        filteredDf.apply(lambda row: sendVocabToAnki(row, 'chinesepod'), axis=1)
+        filteredDf.apply(lambda row: sendVocabToAnki(row, ANKI_DECK_NAME), axis=1)
 
 
 
@@ -123,6 +128,20 @@ def getVocabDf(htmlUrl):
     df.columns = ['hanzi', 'pinyin', 'meaning']
     return df
 
+def addDeck(deckName):
+
+    payload = {
+        "action": "createDeck",
+        "params": {"deck": deckName},
+        "version": 6
+    }
+
+    r = requests.post(url=ANKI_ENDPOINT, data=json.dumps(payload))
+    res = json.loads(r.text)
+    print(res)
+
+    return res
+
 def addNotes(deckName, front, back):
 
     payload = {
@@ -147,6 +166,8 @@ def addNotes(deckName, front, back):
     r = requests.post(url=ANKI_ENDPOINT, data=json.dumps(payload))
     res = json.loads(r.text)
     print(res)
+
+
 
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.float_format', lambda x: '%.0f' % x)
