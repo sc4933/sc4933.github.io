@@ -22,7 +22,7 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
     """
 
 # configs
-sendToAnki = True
+UPLOAD_TO_ANKI = True
 ANKI_DECK_NAME = 'chineseidentity'
 
 def main():
@@ -68,7 +68,7 @@ def main():
     FileUtil.saveToFile(filteredDf.to_html(escape=False), OUTPUT_FILE_DIR + 'cp.html') 
 
     # anki vocab
-    if sendToAnki:
+    if UPLOAD_TO_ANKI:
 
         # create deck
         addDeck(ANKI_DECK_NAME)
