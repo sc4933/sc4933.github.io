@@ -49,7 +49,7 @@ def main():
 
     # pdf feed
     itemList = ''
-    filteredDf = sqldf("select lessonId, studied, dl_vocab, title, levelShowCode, hashKey from df where dl_pdf=='y' order by studied desc")   
+    filteredDf = sqldf("select lessonId, studied, dl_vocab, title, levelShowCode, hashKey from df where studied='y' or dl_pdf=='y' order by studied desc")   
     for index, row in filteredDf.iterrows():
         itemList += generateItem(row['title'] + "(pdf)", getPdfUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])) +"\n"
 
