@@ -75,7 +75,7 @@ def main():
 
         itemList = ''
         filteredDf = sqldf("select lessonId, title, levelShowCode, hashKey from df where dl_vocab=='y'")   
-        print(filteredDf)
+        # print(filteredDf)
 
         # send vocab to anki
         filteredDf.apply(lambda row: sendVocabToAnki(row, ANKI_DECK_NAME), axis=1)
