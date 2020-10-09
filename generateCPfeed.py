@@ -23,7 +23,7 @@ BOILERPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 
 # configs
 UPLOAD_TO_ANKI = True
-ANKI_DECK_NAME = 'chineseidentity'
+ANKI_DECK_NAME = 'wechat'
 
 def main():
 
