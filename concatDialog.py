@@ -18,8 +18,11 @@ def main():
 
     for index, row in df.iterrows():
 
+        filename = stringcase.alphanumcase(row['title']) + ".mp3"
+        print("%s: downloading %s"  % (index, filename))
+        
         url = getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
-        fpath = OUTPUT_FILE_DIR + "/" + stringcase.alphanumcase(row['title']) + ".mp3"
+        fpath = OUTPUT_FILE_DIR + "/" + filename
         urllib.request.urlretrieve(url, fpath)
 
 
