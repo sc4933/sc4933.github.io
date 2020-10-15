@@ -2,10 +2,12 @@ import pandas as pd
 from pandasql import sqldf
 from fileutils import FileUtil
 import requests, json
+import urllib
 from bs4 import BeautifulSoup
+import stringcase
 
 MASTER_FILE = '/home/steve/tmp/chinesepod/chinesepodLessons.xlsx'
-OUTPUT_FILE_DIR = '/home/steve/workspace/sc4933.github.io/'
+OUTPUT_FILE_DIR = '/home/steve/workspace/sc4933.github.io/downloads'
 
 S3_URL = "http://s3contents.chinesepod.com/" 
 
@@ -15,8 +17,10 @@ def main():
     df = df.head(5)
 
     for index, row in df.iterrows():
-        print( getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey']))
 
+        url = getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
+        fpath = OUTPUT_FILE_DIR + "/" + stringcase.alphanumcase(row['title']) + ".mp3"
+        urllib.request.urlretrieve(url, fpath)
 
 
 
