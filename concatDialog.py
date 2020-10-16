@@ -14,16 +14,20 @@ S3_URL = "http://s3contents.chinesepod.com/"
 def main():
 
     df = pd.read_excel(MASTER_FILE, sheet_name='upper_intemediate')
-    df = df.head(5)
+    df = sqldf("select * from df where lessonId>=1834")   
+    print(df)
 
     for index, row in df.iterrows():
 
         filename = stringcase.alphanumcase(row['title']) + ".mp3"
         print("%s: downloading %s"  % (index, filename))
         
-        url = getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
-        fpath = OUTPUT_FILE_DIR + "/" + filename
-        urllib.request.urlretrieve(url, fpath)
+        try:
+            url = getDialogUrl(row['lessonId'], row['levelShowCode'], row['hashKey'])
+            fpath = OUTPUT_FILE_DIR + "/" + filename
+            urllib.request.urlretrieve(url, fpath)
+        except:
+            print('error download ' + filename)
 
 
 

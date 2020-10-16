@@ -1,0 +1,5 @@
+to get all files with |:
+> ls . | xargs -n 1 basename | tr "\n" "|"
+
+then 
+> ffmpeg -i "concat:file1.mp3|file2.mp3" -acodec copy output.mp3
